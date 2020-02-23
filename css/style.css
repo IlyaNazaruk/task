@@ -1,0 +1,66 @@
+.clearfix:after{
+    content: '';
+    display: table;
+    width: 100%;
+    clear:box;
+}
+
+body{
+    background: #ffffff;
+}
+
+header{
+    background: #353535;
+}
+
+.header-btn{
+    color: #ffffff;
+}
+
+.header-btn-group{
+    float: left;
+    margin: 20px;
+}
+
+.header-btn-group a{
+    margin-left: 20px;
+}
+
+.header-btn-group a:hover{
+    color: #B4B4B4;
+    text-decoration: none;
+}
+
+.reg-form{
+    text-align: center;
+    margin-top: 40px;
+}
+
+.reg-form h1{
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.container{
+    width: 500px;
+}
+
+.errLogin{
+    color: red;
+}
+
+.errName{
+    color: red;
+}
+
+.errSurname{
+    color: red;
+}
+
+.errPass{
+    color: red;
+}
+
+#sendMail{
+    margin-top: 20px;
+}

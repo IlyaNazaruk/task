@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="clearfix">
+        <div class="header-btn-group">
+            <a href="index.html" class="header-btn">Регистрация</a>
+            <a href="auth.html" class="header-btn">Авторизация</a>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <div class="reg-form clearfix">
+                <h1>Регистрация</h1>
+                <form action="mail.php" method="post">
+
+                    <div class="errLogin"></div>
+                    <input type="text" class="form-control" name="login" id="login" placeholder="* Логин">
+                    <br>
+
+                    <input type="text" class="form-control" name="email" id="email" placeholder="email"><br>
+
+                    <div class="errName"></div>
+                    <input type="text" class="form-control" name="name" id="name" placeholder="* Имя"><br>
+
+                    <div class="errSurname"></div>
+                    <input type="text" class="form-control" name="surname" id="surname" placeholder="* Фамилия"><br>
+
+                    <div class="errPass"></div>
+                    <input type="password" class="form-control" name="pass" id="pass" placeholder="* Пароль"><br>
+
+                    <button class="btn btn-success" type="submit" id="sendMail">Зарегистрировать</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/formMail.js"></script>
+</body>
+</html>

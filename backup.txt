@@ -1,0 +1,142 @@
+<?php
+
+        ini_set('error_reporting', E_ALL);
+        ini_set('display_errors', 1);
+        ini_set('display_startup_errors', 1);
+
+        $link = mysqli_connect('localhost','root','','register') or die("Ошибка " . mysqli_error($link));
+
+        $query ="SELECT * FROM `users`";
+
+        $result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link));
+
+
+
+        {
+            $rows = mysqli_num_rows($result); // количество полученных строк
+
+            echo "<form action='delete.php' method=\"POST\" name='form_name1'>";
+            echo "<button class=\"btn btn-sm btn-secondary\" type=\"submit\">Delete</button>";
+            echo "<table class='table table-hover'><tr class='thead-dark'><th><a href=\"javascript:sel_all()\" id='select_all'>Select all</a></th><th>Delete</th><th>#</th><th>Логин</th><th>email</th><th>Имя</th><th>Фамилия</th></tr>";
+            for ($i = 0 ; $i < $rows ; $i++)
+            {
+                $row = mysqli_fetch_row($result);
+                echo "<tr>";
+                echo "<td><label><input type=\"checkbox\" name=\"cheks\" value='value='" . $id . "''></label></td>";
+                echo "<td><a href='#'>delete</a></td>";
+                for ($j = 0 ; $j <= 4 ; $j++) echo "<td>$row[$j]</td>";
+                echo "</tr>";
+            }
+            echo "</table>";
+            echo "</form>";
+
+            // очищаем результат
+            mysqli_free_result($result);
+        }
+
+        mysqli_close($link);
+        ?>
+
+
+
+
+
+
+        <div class="toolbar">
+                    <div class="btn-group toolbar-btn">
+                        <button class="btn btn-sm btn-secondary" type="submit">Delete</button>
+                        <button class="btn btn-sm btn-secondary">Block</button>
+                        <button class="btn btn-sm btn-secondary">Unblock</button>
+                    </div>
+                </div>
+
+
+                        <?php
+
+                                ini_set('error_reporting', E_ALL);
+                                ini_set('display_errors', 1);
+                                ini_set('display_startup_errors', 1);
+
+                                $link = mysqli_connect('localhost','root','','register') or die("Ошибка " . mysqli_error($link));
+
+                                $query ="SELECT * FROM `users`";
+
+                                $result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link));
+
+
+                                {
+                                    $rows = mysqli_num_rows($result); // количество полученных строк
+
+                                    echo "<form action='delete.php' method=\"POST\" name='form_name1'>";
+                                    echo "<td><input type='submit' value='Удалить выделенные записи'></td>";
+                                    echo "<table class='table table-hover'><tr class='thead-dark'><th><a href=\"javascript:sel_all()\" id='select_all'>Select all</a></th><th>#</th><th>Логин</th><th>email</th><th>Имя</th><th>Фамилия</th></tr>";
+                                    for ($i = 0 ; $i < $rows ; $i++)
+                                    {
+                                        $row = mysqli_fetch_row($result);
+                                        echo "<tr>";
+                                        echo "<td><label><input type=\"checkbox\" name=\"cheks\" value='value='" . $id . "''></label></td>";
+                                        for ($j = 0 ; $j <= 4 ; $j++) echo "<td>$row[$j]</td>";
+                                        echo "</tr>";
+                                    }
+                                    echo "</table>";
+                                    echo "</form>";
+
+                                    // очищаем результат
+                                    mysqli_free_result($result);
+                                }
+
+                                mysqli_close($link);
+                                ?>
+
+
+if (!$link) {
+            die("Ошибка подключения: " . mysqli_connect_error());
+        }
+
+        // Удаления записи
+        $sql = "DELETE FROM `users` WHERE `id`=10";
+
+        if (mysqli_query($link, $sql)) {
+            echo "Запись успешно удалена";
+        } else {
+            echo "Ошибка удаления записи: " . mysqli_error($link);
+        }
+
+
+
+        <?php
+
+                ini_set('error_reporting', E_ALL);
+                ini_set('display_errors', 1);
+                ini_set('display_startup_errors', 1);
+
+                $link = mysqli_connect('localhost','root','','register') or die("Ошибка " . mysqli_error($link));
+
+                $query ="SELECT * FROM `users`";
+
+                $result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link));
+
+
+                {
+                    $rows = mysqli_num_rows($result); // количество полученных строк
+
+                    echo "<form action='delete.php' method=\"POST\">";
+                    echo "<td><input type='submit' value='Удалить выделенные записи'></td>";
+                    echo "<table class='table table-hover'><tr class='thead-dark'><th><a href=\"javascript:sel_all()\" id='select_all'>Select all</a></th><th>#</th><th>Логин</th><th>email</th><th>Имя</th><th>Фамилия</th></tr>";
+                    for ($i = 0 ; $i < $rows ; $i++)
+                    {
+                        $row = mysqli_fetch_row($result);
+                        echo "<tr>";
+                        echo "<td><label><input type=\"checkbox\" name=\"cheks\" value='$id'></label></td>";
+                        for ($j = 0 ; $j <= 4 ; $j++) echo "<td>$row[$j]</td>";
+                        echo "</tr>";
+                    }
+                    echo "</table>";
+                    echo "</form>";
+
+                    // очищаем результат
+                    mysqli_free_result($result);
+                }
+
+                mysqli_close($link);
+                ?>

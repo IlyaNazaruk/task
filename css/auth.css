@@ -1,0 +1,58 @@
+.container{
+    text-align: center;
+}
+
+.container h5{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.clearfix:after{
+    content: '';
+    display: table;
+    width: 100%;
+    clear:box;
+}
+
+body{
+    background: #ffffff;
+}
+
+header{
+    background: #353535;
+}
+
+.header-auth{
+    float: left;
+    margin: 20px;
+}
+
+.header-auth p{
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.header-exit{
+    float: right;
+    margin: 20px;
+}
+
+#select_all{
+    color: #ffffff;
+    font-weight: 100;
+    font-size: 16px;
+}
+
+#select_all:hover{
+    color: #B4B4B4;
+    text-decoration: none;
+}
+
+.toolbar{
+    text-align: left;
+    background: #343a40;
+}
+
+.toolbar-btn{
+    margin: 10px;
+}
