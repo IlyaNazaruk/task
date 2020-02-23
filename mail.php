@@ -31,7 +31,7 @@ if (strlen($login) === 0 || strlen($login) > 100) {
 
 $pass = password_hash($pass, PASSWORD_DEFAULT);
 
-$mysql = new mysqli('localhost','root','','register');
+$mysql = new mysqli('localhost','IlyaNazaruk','570023Dom!','task');
 
 
 if (mysqli_connect_error()) {
